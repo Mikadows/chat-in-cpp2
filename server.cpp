@@ -66,11 +66,10 @@ int main(int argc, char const *argv[])
     }
 
     auto port = atoi(argv[1]);
-    auto server_socket = sockaddr_in{
-        .sin_family = AF_INET,
-        .sin_port = htons(port),
-        .sin_addr.s_addr = INADDR_ANY,
-    };
+    sockaddr_in server_socket;
+    server_socket.sin_family = AF_INET;
+    server_socket.sin_port = htons(port);
+    server_socket.sin_addr.s_addr = INADDR_ANY;
 
     auto socket_fd = socket(AF_INET, SOCK_STREAM, 0);
 
