@@ -1,5 +1,8 @@
+#include <algorithm>
 #include <arpa/inet.h>
 #include <cerrno>
+#include <cstring>
+#include <ctype.h>
 #include <iostream>
 #include <string>
 #include <unistd.h>
@@ -13,7 +16,7 @@ bool is_number(const char *str)
 
     while (*str != '\0')
     {
-        if (!isnumber(*str))
+        if (!isdigit(*str))
         {
             return false;
         }
