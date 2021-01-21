@@ -96,7 +96,7 @@ int main(int argc, char const *argv[])
 
     std::vector<std::thread> threads;
 
-    while (client_fd = accept(socket_fd, reinterpret_cast<sockaddr *>(&client_socket), reinterpret_cast<socklen_t *>(&client_socket_size)))
+    while ((client_fd = accept(socket_fd, reinterpret_cast<sockaddr *>(&client_socket), reinterpret_cast<socklen_t *>(&client_socket_size))))
     {
         std::thread client_thread(handle_client, client_fd, &client_socket);
         threads.push_back(std::move(client_thread));
