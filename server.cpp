@@ -1,6 +1,9 @@
 #include <arpa/inet.h>
 #include <cerrno>
+#include <cstdlib>
+#include <ctype.h>
 #include <iostream>
+#include <netinet/in.h>
 #include <string>
 #include <thread>
 #include <unistd.h>
